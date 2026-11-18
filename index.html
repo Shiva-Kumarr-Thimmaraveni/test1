@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="game-panel" aria-label="Chess game">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">LOCAL MATCH</p>
+          <h1>Chess</h1>
+        </div>
+        <button id="new-game" class="new-game" type="button">New Game</button>
+      </div>
+
+      <div class="status-row">
+        <div id="turn-indicator" class="turn-indicator" aria-live="polite">
+          <span class="turn-dot"></span>
+          <span id="turn-text">White to move</span>
+        </div>
+        <div id="game-state" class="game-state"></div>
+      </div>
+
+      <div id="board" class="board" role="grid" aria-label="Chess board"></div>
+
+      <div class="legend">
+        <span><i class="legend-dot selected"></i>Selected</span>
+        <span><i class="legend-dot legal"></i>Legal move</span>
+        <span><i class="legend-dot capture"></i>Capture</span>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-block">
+        <h2>Move history</h2>
+        <div id="move-history" class="move-history">
+          <p class="empty-history">No moves yet</p>
+        </div>
+      </div>
+
+      <div class="panel-block captured-block">
+        <h2>Captured</h2>
+        <div class="captured-row">
+          <span class="captured-label">White</span>
+          <div id="captured-white" class="captured-pieces"></div>
+        </div>
+        <div class="captured-row">
+          <span class="captured-label">Black</span>
+          <div id="captured-black" class="captured-pieces"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <dialog id="promotion-dialog">
+    <h2>Promote pawn</h2>
+    <div class="promotion-options">
+      <button type="button" data-piece="q" aria-label="Queen"></button>
+      <button type="button" data-piece="r" aria-label="Rook"></button>
+      <button type="button" data-piece="b" aria-label="Bishop"></button>
+      <button type="button" data-piece="n" aria-label="Knight"></button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
