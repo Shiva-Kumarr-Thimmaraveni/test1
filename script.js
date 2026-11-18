@@ -7,7 +7,6 @@ const capturedWhiteElement = document.getElementById("captured-white");
 const capturedBlackElement = document.getElementById("captured-black");
 const promotionDialog = document.getElementById("promotion-dialog");
 
-// some function has been added 
 const glyphs = {
   w: { k: "♔", q: "♕", r: "♖", b: "♗", n: "♘", p: "♙" },
   b: { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" }
